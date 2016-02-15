@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		38A73619B36A63B602C90F2D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 689D30D6C8699C3B983C8090 /* libPods.a */; };
+		56844C1D1C72075B0091A7CB /* NewsFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56844C1C1C72075B0091A7CB /* NewsFeedViewController.m */; };
+		56844C211C7212DD0091A7CB /* NewsFeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56844C201C7212DD0091A7CB /* NewsFeedTableViewCell.m */; };
+		56844C241C7271540091A7CB /* NewsDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56844C231C7271540091A7CB /* NewsDetailsViewController.m */; };
 		5692FE051C6F5F3F00C71750 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5692FE041C6F5F3F00C71750 /* main.m */; };
 		5692FE081C6F5F3F00C71750 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5692FE071C6F5F3F00C71750 /* AppDelegate.m */; };
 		5692FE0E1C6F5F3F00C71750 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5692FE0C1C6F5F3F00C71750 /* Main.storyboard */; };
@@ -24,6 +27,13 @@
 
 /* Begin PBXFileReference section */
 		4E14F722A4264B5AB7E0964F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		56844C1B1C72075B0091A7CB /* NewsFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsFeedViewController.h; sourceTree = "<group>"; };
+		56844C1C1C72075B0091A7CB /* NewsFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsFeedViewController.m; sourceTree = "<group>"; };
+		56844C1E1C720BDB0091A7CB /* OnlinerRSS.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OnlinerRSS.pch; sourceTree = "<group>"; };
+		56844C1F1C7212DD0091A7CB /* NewsFeedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsFeedTableViewCell.h; sourceTree = "<group>"; };
+		56844C201C7212DD0091A7CB /* NewsFeedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsFeedTableViewCell.m; sourceTree = "<group>"; };
+		56844C221C7271540091A7CB /* NewsDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDetailsViewController.h; sourceTree = "<group>"; };
+		56844C231C7271540091A7CB /* NewsDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailsViewController.m; sourceTree = "<group>"; };
 		5692FE001C6F5F3F00C71750 /* OnlinerRSS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlinerRSS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5692FE041C6F5F3F00C71750 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5692FE061C6F5F3F00C71750 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -100,6 +110,7 @@
 				56D968091C70926000C02A6B /* RKXMLReaderSerialization.h */,
 				56D9680A1C70926000C02A6B /* RKXMLReaderSerialization.m */,
 				5692FE041C6F5F3F00C71750 /* main.m */,
+				56844C1E1C720BDB0091A7CB /* OnlinerRSS.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -114,6 +125,8 @@
 				56D968151C70C4DA00C02A6B /* News.m */,
 				56D968181C70C64600C02A6B /* NewsModel.h */,
 				56D968191C70C64600C02A6B /* NewsModel.m */,
+				56844C1F1C7212DD0091A7CB /* NewsFeedTableViewCell.h */,
+				56844C201C7212DD0091A7CB /* NewsFeedTableViewCell.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -123,6 +136,10 @@
 			children = (
 				56D9681B1C70C7F300C02A6B /* LoadingViewController.h */,
 				56D9681C1C70C7F300C02A6B /* LoadingViewController.m */,
+				56844C1B1C72075B0091A7CB /* NewsFeedViewController.h */,
+				56844C1C1C72075B0091A7CB /* NewsFeedViewController.m */,
+				56844C221C7271540091A7CB /* NewsDetailsViewController.h */,
+				56844C231C7271540091A7CB /* NewsDetailsViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -277,6 +294,9 @@
 			files = (
 				5692FE1C1C6F62B300C71750 /* NewsModel.xcdatamodeld in Sources */,
 				56D9680B1C70926000C02A6B /* RKXMLReaderSerialization.m in Sources */,
+				56844C241C7271540091A7CB /* NewsDetailsViewController.m in Sources */,
+				56844C211C7212DD0091A7CB /* NewsFeedTableViewCell.m in Sources */,
+				56844C1D1C72075B0091A7CB /* NewsFeedViewController.m in Sources */,
 				56D968171C70C4DA00C02A6B /* News.m in Sources */,
 				5692FE081C6F5F3F00C71750 /* AppDelegate.m in Sources */,
 				5692FE051C6F5F3F00C71750 /* main.m in Sources */,
@@ -393,6 +413,8 @@
 			baseConfigurationReference = AD7AB89ECA0BBC25BE1EE513 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = OnlinerRSS/OnlinerRSS.pch;
 				INFOPLIST_FILE = OnlinerRSS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.domik.OnlinerRSS;
@@ -405,6 +427,8 @@
 			baseConfigurationReference = 4E14F722A4264B5AB7E0964F /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = OnlinerRSS/OnlinerRSS.pch;
 				INFOPLIST_FILE = OnlinerRSS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.domik.OnlinerRSS;

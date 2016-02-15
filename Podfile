@@ -4,4 +4,5 @@ pod 'RestKit'
 pod 'PureLayout'
 pod 'MagicalRecord'
 pod 'XMLReader'
+pod 'hpple'
 

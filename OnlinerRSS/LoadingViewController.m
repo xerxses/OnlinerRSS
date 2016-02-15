@@ -7,11 +7,8 @@
 //
 
 #import "LoadingViewController.h"
-#import <RestKit/RestKit.h>
 #import "NewsModel.h"
-#import "RKXMLReaderSerialization.h"
 #import "News.h"
-#import <MagicalRecord/MagicalRecord.h>
 
 
 @interface LoadingViewController ()
@@ -24,8 +21,6 @@
 
 - (void)awakeFromNib
 {
-    self.navigationController.navigationBarHidden = YES;
-    
     [self getOnlinerFeed];
 }
 
@@ -50,7 +45,8 @@
     [newsMapping addAttributeMappingsFromDictionary:@{ @"title.text" : @"title",
                                                        @"link.text" : @"link",
                                                        @"pubDate.text" : @"pubDate",
-                                                       @"description.text" : @"shortDesc"
+                                                       @"description.text" : @"shortDesc",
+                                                       @"media:thumbnail.url" : @"image"
                                                        }];
     
     // register mappings with the provider using a response descriptor
@@ -67,24 +63,18 @@
          for (NewsModel *news in mappingResult.array)
          {
              News *newsDB = [News MR_findFirstByAttribute:@"title" withValue:news.title];
-             if (![newsDB.pubDate isEqualToString:news.pubDate])
+             if ((newsDB == nil) || (![news.pubDate containsString:newsDB.pubDate]))
                  [news createDBEntity];
          }
          
-         UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"My Alert"
-                                                                        message:[NSString stringWithFormat:@"%ld", [News MR_countOfEntities]]
-                                                                 preferredStyle:UIAlertControllerStyleAlert];
-         
-         UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                               handler:^(UIAlertAction * action) {}];
-         
-         [alert addAction:defaultAction];
-         [self presentViewController:alert animated:YES completion:nil];
-         
-         NSLog(@"succ");
+         [self performSegueWithIdentifier:@"NewsFeed"
+                                   sender:self];
+         NSLog(@"Sucess!");
      } failure:^(RKObjectRequestOperation *operation, NSError *error)
      {
-         NSLog(@"What do you mean by 'there is no coffee?': %@", error);
+         [self performSegueWithIdentifier:@"NewsFeed"
+                                   sender:self];
+         NSLog(@"Error: %@", error);
      }];
 }
 
